@@ -1,0 +1,95 @@
+\documentclass[11pt,a4paper]{moderncv}
+
+\usepackage{moderntimeline}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[super]{nth}
+
+%\renewcommand{\FrenchLabelItem}{\textcolor{blue}{$\circ$}}
+
+\moderncvstyle{classic}
+\moderncvcolor{orange}
+\tlmaxdates{2013}{2016}
+\tlwidth{0.8ex}
+\tltext{\tiny}
+% adjust the page margins
+\usepackage[scale=0.90]{geometry}
+\setlength{\hintscolumnwidth}{2.5cm}           % if you want to change the width of the column with the dates
+
+% personal data
+\firstname{Corentin}
+\familyname{Le Bigot}
+\title{Student at Epita}
+\address{XXX XXXXX XXXX}{XXXXXX XXXX, France}
+\mobile{(+33)X-XX-XX-XX-XX}
+\email{lebigot.corentin@gmail.com}
+\extrainfo{20 years old}
+\photo[80pt][0.2pt]{photo.png}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Studies}
+
+\cventry{From Sept 2014 }{Computer Science Engineering School}{EPITA}{Paris}
+{France}{5-year cycle including 2 years of preparatory classes - Currently in
+third year}
+
+\cventry{Jan - Jun 2016}{Computer engineering classes}{Stellenbosch University}{Stellenbosch}
+{South Africa}{Semester abroad}
+
+\cventry{Jul 2014 }{French baccalaureate in Sciences, Mention Assez Bien}
+{High School Louis Payen}{Saint Paul, Reunion Island, France}{}{}
+
+\section{Experience}
+
+\subsection{Professional}
+
+\cventry{Sept 2016 - Jun 2017}{OCaml/C\# Teaching assistant}{EPITA}{Paris, France}
+{Teaching assistant for first year students at EPITA}{}
+
+\hfill
+
+\cventry{July 2016 - Aug 2016}{Developer}{Sogeti High Tech}{Toulouse, France}
+{One month intership in R\&D department. Using Myo armband to map arm and fingers mouvements to a 3D modelised arm}{}
+
+\hfill
+
+\cventry{July 2015}{Summer job}{HyperJardin}{Saint Paul, Reunion Island, France}{}{}
+
+\subsection{Scholar}
+
+\cventry{Dec 2016}{Developer}{Computing project at EPITA, Dynamic linker based on UNIX ld.so in C++ and x86 assembly}{2 weeks}{solo project}{}
+
+\cventry{Nov 2016}{Developer}{Computing project at EPITA, Posix-compliant
+command interpreter (shell) based on bash from scratch in C}{3 weeks}{team of 3}{}
+
+\cventry{Sept - Nov 2015}{Developer}{Computing project at EPITA, Facial recognition software
+based on Viola \& Jones algorithm in C}{4 months}{team of 4}{}
+
+\cventry{Jan - June 2015}{Developer}{Computing project at EPITA, Real 
+Time Strategy video game in C\#}{6 months}{Leader of a team of 3}{}
+
+\section{Skills}
+
+\cvitem{Programming languages}{C, C++, C\#, OCaml, HTML, CSS, Java, Python, Shell Scripting, x86 Assembly}{}{}
+\cvitem{Others}{Unix Environment, \LaTeX, Versioning (Git), Office software applications}{}{}
+
+\section{Languages}
+\cvlanguage{French}{Mother tongue}{}
+\cvlanguage{English}{Good knowledge} {Score of 825 at TOEIC}
+\cvlanguage{Spanish}{Basic knowledge}{}
+
+\newpage
+
+\section{Centers of interest}
+
+\cvitem{Organizations}{\textbf{GConfs} (Talks organizer since Sept 2014), 
+talks and presentations about IT by and for students 
+\href{http://www.gconfs.fr/}{(http://www.gconfs.fr)}}
+\cvitem{Sport}{Body-building, Running}
+\cvitem{Miscellaneous}{Programming, Reading, Skateboarding}
+
+\end{document}
