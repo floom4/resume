@@ -21,6 +21,9 @@ fr:
 en:
 	make -C ${SRCDIR} en
 
+us:
+	make -C ${SRCDIR} make-us
+
 edit-fr:
 	${EDITOR} ${SRCDIR}/${CVFR}.tex
 edit-en:
@@ -33,7 +36,8 @@ disp-en: en
 	${VIEWER} ${OUTDIR}/${CVEN}.pdf
 
 clean:
-	rm ${OUTDIR}/*.aux ${OUTDIR}/*.log ${OUTDIR}/*.out
+	${RM} ${OUTDIR}/*.aux ${OUTDIR}/*.log ${OUTDIR}/*.out
+	make -C ${SRCDIR} clean
 
 dist-clean: clean
-	rm ${OUTDIR}/*.pdf
+	${RM} ${OUTDIR}/*.pdf
