@@ -1,101 +1,191 @@
-\documentclass[10pt,a4paper]{moderncv}
+% a mashup of hipstercv, friggeri and twenty cv
+% https://www.latextemplates.com/template/twenty-seconds-resumecv
+% https://www.latextemplates.com/template/friggeri-resume-cv
 
-\usepackage{moderntimeline}
-\usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[super]{nth}
+\documentclass[lighthipster]{lib/simplehipstercv}
+% available options are: darkhipster, lighthipster, pastel, allblack, grey, verylight, withoutsidebar
+% withoutsidebar
+%\usepackage[utf8]{inputenc}
+\usepackage[default]{raleway}
+\usepackage[left=0.15cm, right=0.8cm, top=1cm, bottom=0.5cm, a4paper]{geometry}
+\usepackage{hyperref}
 
-%\renewcommand{\FrenchLabelItem}{\textcolor{blue}{$\circ$}}
+%------------------------------------------------------------------ Variablen
 
-\moderncvstyle{classic}
-\moderncvcolor{orange}
-\tlmaxdates{2013}{2016}
-\tlwidth{0.8ex}
-\tltext{\tiny}
-% adjust the page margins
-\usepackage[scale=0.90]{geometry}
-\setlength{\hintscolumnwidth}{2.5cm}           % if you want to change the width of the column with the dates
-\usepackage{helvet}
-\usepackage{fontspec}
-\setmainfont[Ligatures=TeX,Scale=1]{DejaVuSans}
+\newlength{\rightcolwidth}
+\newlength{\leftcolwidth}
+\setlength{\leftcolwidth}{0.23\textwidth}
+\setlength{\rightcolwidth}{0.75\textwidth}
 
-% personal data
-\firstname{Corentin}
-\familyname{Le Bigot}
-\title{Software Engineer looking for a full time starting around October 2019}
-\address{XXX XXXXXX XXXXX XXXXX}{Dublin, Ireland}
-% \mobile{(+33)X-XX-XX-XX-XX}
-\mobile{(+353) XX-XXX-XXXX}
-\email{lebigot.corentin@gmail.com}
-\social[linkedin][www.linkedin.com/in/corentin-le-bigot/]{corentin-le-bigot/}
-\extrainfo{22 years old}
-\photo[60pt][0.2pt]{photo.png}
+%------------------------------------------------------------------
+\title{Resume}
+\author{Corentin LE BIGOT}
+\date{February 2026}
 
+\pagestyle{empty}
 \begin{document}
 
-\makecvtitle
 
-\section{Studies}
+%\thispagestyle{empty}
+%-------------------------------------------------------------
 
-\cventry{Sept 2014 - Sept 2019}{Computer Science Engineering School}{EPITA}{Paris}
-{France}{5-year cycle including 2 years of preparatory classes - Graduate in September 2019}
+%\section*{Start}
 
-\cventry{Jan - Jun 2016}{Computer engineering classes}{Stellenbosch University}{Stellenbosch}
-{South Africa}{Semester abroad}
+\simpleheader{headercolour}{Corentin}{Le Bigot}{Software Engineer}{white}
 
-\cventry{Jul 2014 }{French baccalaureate in Sciences, Mention Assez Bien}
-{High School Louis Payen}{Saint Paul, Reunion Island, France}{}{}
 
-\section{Experience}
 
-\subsection{Professional}
+%------------------------------------------------
 
-\cventry{Mar 2019 - Sep 2019}{Software Engineer Intern}{Arista Networks}{Dublin, Ireland}
-{Working on NAT protocol on network switches in TACC(C++ variant) and Python}{}
+% this has to be here so the paracols starts..
+\subsection*{}
+\vspace{4.7em}
 
-\cventry{Sept 2016 - Dec 2018}{Computer Science Teaching assistant}{EPITA}{Paris, France}
-{Teaching OCaml/C\# to first year students and C/C++/Java/Unix to third year students at EPITA}{}
+\setlength{\columnsep}{1cm}
+\columnratio{0.23}[0.75]
+\begin{paracol}{2}
+\hbadness5000
+%\backgroundcolor{c[1]}[rgb]{1,1,0.8} % cream yellow for column-1 %\backgroundcolor{g}[rgb]{0.8,1,1} % \backgroundcolor{l}[rgb]{0,0,0.7} % dark blue for left margin
 
-\cventry{Sept 2017 - Dec 2017}{Software Engineer Intern}{Thales Communications \& Security}{Gennevilliers, France}
-{Worked on SAFURE European project to make safe and secure data transfert from connected medical device to servers via smartphone}{}
+\paracolbackgroundoptions
 
-\cventry{July 2016 - Aug 2016}{Software Engineer Intern}{Sogeti High Tech}{Toulouse, France}
-{One month intership in R\&D department. Using Myo armband to map arm and fingers mouvements to a 3D modelised arm}{}
+% 0.9,0.9,0.9 -- 0.8,0.8,0.8
 
-\subsection{School}
 
-\cventry{Jun 2018}
-{Developer}{Tools in Python for correction automation and subject generation of the 3rd year students projects at EPITA}
-{6 months}{team of 4}{}
+\footnotesize
+{\setasidefontcolour
+\flushleft
+%\begin{center}
+%    \roundpic{img/coco_photo.jpg}
+%\end{center}
 
-\cventry{Jan 2017}
-{Developer}{Compiler for Tiger language in C++ (backend included)}
-{9$\times$2 weeks}{team of 3}{}
+\vspace{2em}
+{\leftskip 0.5em
 
-\cventry{Dec 2016}
-{Developer}{Computing project at EPITA, Dynamic linker based on UNIX ld.so in C++ and x86 assembly}{2 weeks}
-{solo project}{}
+\bg{cvgreen}{white}{About me}\\[0.5em]
 
-\cventry{Nov 2016}{Developer}{Computing project at EPITA, Posix-compliant
-command interpreter (shell) based on bash from scratch in C}
-{3 weeks}{team of 3}{}
+%{\footnotesize
+%After almost 5 years working for Arista Networks, I am looking for new a experience challenging my knowledge in software development and architecture, %embedded systems and networks}
+{\footnotesize
+Looking for new challenges in software development and architecture.}
+\bigskip
 
-\section{Skills}
+\bigskip
+\vspace{1em}
 
-\cvitem{Programming}{C, C++, Java, Python, Shell Scripting, x86 Assembly}{}{}
-\cvitem{Others}{Unix Environment, \LaTeX, Versioning (Git)}{}{}
+\bg{cvgreen}{white}{Areas of specialization} \\[0.5em]
 
-\section{Languages}
-\cvlanguage{French}{Mother tongue}{}
-\cvlanguage{English}{Good knowledge} {Score of 930 at TOEIC}
-\cvlanguage{Spanish}{Basic knowledge}{}
+Embedded systems ~•~ Software Architecture ~•~  Network Stack
 
-\section{Centers of interest}
+\bigskip
+\vspace{2em}
 
-\cvitem{Organizations}{\textbf{GConfs} (Talks organizer between 2014 and 2019), 
-talks and presentations about IT by and for students 
-\href{http://www.gconfs.fr/}{(http://www.gconfs.fr)}}
-\cvitem{Hobbies}{Workout, Running, Swing dancing, Reading, Skateboarding}
+\bg{cvgreen}{white}{Programming languages}\\[0.5em]
+C++ ~/~ C ~/~ Go ~/~ Python \newline
+
+\bigskip
+\vspace{1em}
+
+\bg{cvgreen}{white}{Skills}\\[0.5em]
+
+\texttt{OSI Network (L1-L7)} \newline
+\texttt{Git} ~/~ \texttt{gdb} ~/~ \texttt{Linux} \newline
+\texttt{Docker} ~/~ \texttt{SQL} ~/~ \texttt{Ansible} \newline
+\texttt{Teamwork} ~/~ \texttt{Communication}
+\texttt{Problem solving}
+
+\bigskip
+\vspace{1em}
+
+\bg{cvgreen}{white}{Languages}\\[0.5em]
+\begin{tabular}{l | ll}
+\textbf{French} & C2 & {\phantom{x}\footnotesize native} \\
+\textbf{English} & C2 & \pictofraction{\faCircle}{cvgreen}{3}{cvgreen}{1}{\tiny} \\
+\textbf{Spanish} & B2 & \pictofraction{\faCircle}{cvgreen}{2}{black!30}{2}{\tiny} \\
+\textbf{German} & A2 & \pictofraction{\faCircle}{cvgreen}{1}{black!30}{3}{\tiny}
+\end{tabular}
+
+\bigskip
+\vspace{1em}
+
+\bg{cvgreen}{white}{Hobbies}\\[0.5em]
+\hspace{0.5em} Climbing ~.~ Video games ~.~ Piano 
+\bigskip
+}
+
+%\vspace{4em}
+\vfill{}
+
+{\footnotesize
+%\begin{flushleft}
+\infobubble{\faLinkedin}{cvgreen}{white}{\href{https://www.linkedin.com/in/corentin-le-bigot/}{Corentin Le Bigot}}
+\infobubble{\faGithub}{cvgreen}{white}{\href{https://www.github.com/floom4/}{github.com/floom4}}
+\infobubble{\faAt}{cvgreen}{white}{\fontsize{6pt}{6pt}{\url{lebigot.corentin@gmail.com}}}
+\infobubble{\faPhone}{cvgreen}{white}{\scriptsize{<PHONE>}}
+%\end{flushleft}
+}
+
+\phantom{turn the page}
+}
+%-----------------------------------------------------------
+\switchcolumn
+
+\vspace{1em}
+
+\small
+\section*{Experiences}
+
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2024--}{Software Engineer}{Scaleway}{Paris, France \color{cvred}}{Contributing to the development and operation of managed load balancers, CDN, and WAF SaaS solutions in a large-scale cloud provider environment. \newline
+     \newline Tasks: \newline
+    $\bullet$ Designing and implementing new features from protobuf/gRPC API to SQL database through multiple golang handlers and workers \newline
+    $\bullet$ Designing and managing large infrastructure with multiple cloud components (databases, servers, queues, ...) \newline
+    $\bullet$ Maintaining observability stack and alerting systems to ensure system health and rapid incident response. \newline
+    $\bullet$ Participating in a customer escalation rotation, managing customer incidents, ensuring service reliability, and implementing proactive measures to minimize downtime.
+    } {img/scaleway.jpg} \\
+    \cvevent{2019--2024}{Software Engineer}{Arista Networks}{Dublin, Ireland \color{cvred}}{Working on NAT protocol implementation for hardware packet forwarding on L3 switches, using the StrataXgs network on chip family. \newline
+    
+    \newline Tasks: \newline
+    $\bullet$ Designed and developed features to improve NAT support. \newline
+    $\bullet$ Improved coverage through unit, model and product tests, ensuring test pipeline pass-rate over 95\%. \newline
+    $\bullet$ Played a pivotal role in customer escalation management, identifying, tracking and resolving issues. \newline
+    $\bullet$ Mentored interns and new employees on tools, codebase and languages, led mentored projects, organized debugging sessions and talks. \newline  
+    
+    Notable projects: \newline
+    $\bullet$ Doubled NAT scale by designing and implementing mechanism to disable NAPT fragment hardware forwarding. \newline
+    $\bullet$ Designed and implemented solution to a major design issue leading unintended traffic being forwarded to CPU causing slowness and packets drop. \newline
+    $\bullet$ Led effort to transition NAT hardware programming from SDK calls to an asynchronous state design pattern.
+    } {img/arista.png} \\
+    \cvevent{2016--2019}{Teaching assistant}{EPITA}{Paris, France \color{cvred}}{Teaching Ocaml, C\# to EPITA 1st year students. \newline
+Teaching C++, Java, C and UNIX to EPITA 3rd-year students. \newline
+Preparing projects and practical class subjects, shifts to help the students, correcting the student work and presenting the subjects in front of groups of 50 to 400 hundreds students. \newline
+Creating and improving school tools and infrastructure
+}{img/epita.png} \\
+    \cvevent{2017}{Software Engineer Intern}{Thales}{Paris, France \color{cvred}}{Developped an Android application to make secure data upload from connected medical device (IMD) as part of the SAFURE European project. \newline 4 months internship.}{img/thales.jpg} \\
+    
+\end{tabular}
+
+\section*{Studies}
+\begin{tabular}{r| p{0.5\textwidth} c}
+    \cvevent{2014-2019}{Computer Science Engineering School}{EPITA}{Paris, France \color{cvred}}{Major: Real time and Embedded systems \newline 
+    5-year cycle including 2 years of preparatory classes - Graduated}{img/epita.png}
+    %\cvevent{2014}{Science Baccalaureate}{Lycée Louis Payen}{St Paul, La Réunion, France \color{cvred}}{}{}
+\end{tabular}
+\vspace{1em}
+
+\vfill{} % Whitespace before final footer
+
+%----------------------------------------------------------------------------------------
+%	FINAL FOOTER
+%----------------------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\begin{minipage}[t]{\rightcolwidth}
+\begin{center}\fontfamily{\sfdefault}\selectfont \color{black!70}
+{\tiny Corentin Le Bigot \icon{\faEnvelopeO}{cvgreen}{} <ADDRESS> }
+\end{center}
+\end{minipage}
+
+
+\end{paracol}
 
 \end{document}

@@ -1,43 +1,21 @@
-CC = xelatex
+ifneq ("$(wildcard .env)","")
+	include .env
+endif
+
 VIEWER = evince
-
-SRCDIR = ./src
-OUTDIR = ./output
-
-OPTS = -ouput-directory ${OUTDIR}
-
-NAME = corentin
-LASTNAME = le-bigot
-CV = ${LASTNAME}_${NAME}_cv
-export CVFR = ${CV}_fr
-export CVEN = ${CV}_en
-
-all:
-	make -C ${SRCDIR}
-
-fr:
-	make -C ${SRCDIR} fr
+NAME=le-bigot_corentin_cv_en
+OUTPUT_DIR=out
 
 en:
-	make -C ${SRCDIR} en
+	mkdir -p out
+	sed -e "s/<PHONE>/${PHONE}/g" -e "s/<ADDRESS>/${ADDRESS}/g" src/${NAME}.tex > /tmp/${NAME}.tex
+	export TEXINPUTS=".:./$(LIB_DIR)//:" && xelatex -interaction=nonstopmode -output-directory=${OUTPUT_DIR} /tmp/${NAME}.tex
 
-us:
-	make -C ${SRCDIR} make-us
-
-edit-fr:
-	${EDITOR} ${SRCDIR}/${CVFR}.tex
-edit-en:
-	${EDITOR} ${SRCDIR}/${CVEN}.tex
-
-disp-fr: fr
-	${VIEWER} ${OUTDIR}/${CVFR}.pdf
-
-disp-en: en
-	${VIEWER} ${OUTDIR}/${CVEN}.pdf
+view: en
+	${VIEWER} ${OUTPUT_DIR}/le-bigot_corentin_cv_en.pdf
 
 clean:
-	${RM} ${OUTDIR}/*.aux ${OUTDIR}/*.log ${OUTDIR}/*.out
-	make -C ${SRCDIR} clean
+	${RM} ${OUTPUT_DIR}/*.{aux,log,out}
 
 dist-clean: clean
-	${RM} ${OUTDIR}/*.pdf
+	${RM} ${OUTPUT_DIR}/*.pdf
